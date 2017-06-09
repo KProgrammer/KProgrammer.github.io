@@ -29,6 +29,7 @@ function Login() {
 
 	var email = document.getElementById('EmailET').value;
 	var password = document.getElementById('PasswordET').value;
+	goToChat();
 
 	auth.signInWithEmailAndPassword(email, password).catch(function(error){
 
@@ -37,6 +38,6 @@ function Login() {
 
 	});
 
-	goToChat();
+	
 	
 }
