@@ -4,7 +4,7 @@ console.log(window.location.pathname);
 function goToChat(){
 
 
-	window.location.pathname = "/Chat/index.html";
+	window.location.href = "https://kprogrammer.github.io/Chat/index.html";
 
 	
 }
