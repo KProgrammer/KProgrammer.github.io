@@ -27,6 +27,8 @@ function Register() {
 
 function Login() {
 
+	console.log("Pressed LoginBtn");
+
 	var email = document.getElementById('EmailET').value;
 	var password = document.getElementById('PasswordET').value;
 	goToChat();
