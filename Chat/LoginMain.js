@@ -3,15 +3,8 @@ console.log(window.location.pathname);
 
 function goToChat(){
 
-	firebase.auth().onAuthStateListener(user => {
-		
-		if (user){
 
-			window.location.href = "https://kprogrammer.github.io/LoginIndex.html"
-
-		}
-
-	});
+	window.location.pathname = "/Chat/index.html";
 
 	
 }
