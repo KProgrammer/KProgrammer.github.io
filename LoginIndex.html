@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="LoginStyles.css">
+</head>
+<body>
+
+<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.1/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCJAKn5L4lzqEIsWRcYbRks6EEK9nxjAYc",
+    authDomain: "chat-site-2cc12.firebaseapp.com",
+    databaseURL: "https://chat-site-2cc12.firebaseio.com",
+    projectId: "chat-site-2cc12",
+    storageBucket: "chat-site-2cc12.appspot.com",
+    messagingSenderId: "384820286689"
+  };
+  firebase.initializeApp(config);
+</script>
+
+  
+  <div class="mainStuff"><p>Email: </p>
+    <input type="text" name="EmailET" id="EmailET">
+    <p>Password: </p>
+    <input type="password" name="PasswordET" id="PasswordET">
+    <p></p>
+    <button onclick="Register()" id="RegisterBTN">Register</button>
+    <p></p>
+    <button id="LoginBTN">Login</button>
+  </div>
+
+
+<script type="text/javascript" src="LoginMain.js"></script>
+
+</body>
+</html>
