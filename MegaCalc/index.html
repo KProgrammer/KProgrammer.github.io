@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <html>
+<!DOCTYPE html>
 <head>
 	<title>Mega Calculator</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
@@ -10,15 +10,15 @@
 
 	<div class="Fraction Calculator">
 
-			<input type="text" id="FractionNumerator1" class="FractionNumerator1">
+			<input type="number" id="FractionNumerator1" class="FractionNumerator1">
 		
-			<input type="text" id="FractionDenominator1" class="FractionDenominator1">
+			<input type="number" id="FractionDenominator1" class="FractionDenominator1">
 			
 			<p></p>
 		
-			<input type="text" id="FractionNumerator2" class="FractionNumerator2">
+			<input type="number" id="FractionNumerator2" class="FractionNumerator2">
 		
-			<input type="text" id="FractionDenominator2" class="FractionDenominator2">
+			<input type="number" id="FractionDenominator2" class="FractionDenominator2">
 
 			<p id="OutputNumerator" class="OutputNumerator"></p>
 			<p id="OutputDenominator" class="OutputDenominator"></p>
@@ -32,9 +32,9 @@
 
 			<p>Fraction Simplifier</p>
 
-			<input type="text" id="FractionSimplifierNum">
+			<input type="number" id="FractionSimplifierNum">
 			<p></p>
-			<input type="text" id="FractionSimplifierDen">
+			<input type="number" id="FractionSimplifierDen">
 
 			<p id="FractionSimplifierOutputNum"></p>
 			<p id="FractionSimplifierOutputDen"></p>
@@ -42,6 +42,47 @@
 			<button onclick="Simplify()">Simplify</button>
 
 			
+
+	</div>
+
+	<div class="Physics Kinematics Basic Eqations Of Motion">
+	<br>
+	<p>Simple Physics Equations Of Motion Selector</p>
+
+	<p>Choose the Values You Know AND Want to Find Out(Four Options)</p>
+
+	<p>It will return the appropriate formula for each case, U AND A Are Compulsory</p>
+
+	<form>
+		
+		<input type="checkbox" name="Values Known" value="v" id="v">v
+		<br>
+		<input type="checkbox" name="Values Known" value="u" id="u">u
+		<br>
+		<input type="checkbox" name="Values Known" value="a" id="a">a
+		<br>
+		<input type="checkbox" name="Values Known" value="t" id="t">t
+		<br>
+		<input type="checkbox" name="Values Known" value="s" id="s">s
+		<br>
+
+	</form>
+
+	<br>
+
+	<p id="OutputPhysicsFormulaSelector"></p>
+
+	<button onclick="ChooseTheEquationOfMotion()">Apply</button>
+
+	</div>
+
+	<div class="Chem PH Value">
+
+		<p>Type in a number and we will show if it is highly or slightly Acidic or Basic</p>
+		<input type="text" id="ChemPHInput">
+		<br>
+		<br>	
+		<button onclick="ChemPHCalc()">Done!</button>
 
 	</div>
 

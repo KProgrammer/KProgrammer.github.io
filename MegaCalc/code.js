@@ -1,3 +1,5 @@
+////////////////////////////////////////////////////////////////////////////////////////
+
 var InputFractionNumerator1 = document.getElementById('FractionNumerator1');
 var InputFractionDenominator1 = document.getElementById('FractionNumerator2');
 var InputFractionNumerator2 = document.getElementById('FractionDenominator1');
@@ -107,4 +109,93 @@ function Simplify(){
 		
 	
 	
+}
+///////////////////////////////////////////////////////////////////////////////////////////
+/************************************************************************************************************ */
+function ChooseTheEquationOfMotion(){
+
+	var WhatToShow = "";
+
+	var VPhysicsEquationsSelector = document.getElementById('v').checked;
+	var UPhysicsEquationsSelector = document.getElementById('u').checked;
+	var APhysicsEquationsSelector = document.getElementById('a').checked;
+	var TPhysicsEquationsSelector = document.getElementById('t').checked;
+	var SPhysicsEquationsSelector = document.getElementById('s').checked;
+
+	if (VPhysicsEquationsSelector && UPhysicsEquationsSelector && APhysicsEquationsSelector && TPhysicsEquationsSelector){
+
+		WhatToShow = "v = u + at";
+
+	} else if (VPhysicsEquationsSelector && UPhysicsEquationsSelector && APhysicsEquationsSelector && SPhysicsEquationsSelector){
+
+		WhatToShow = "v^2 - u^2 = 2as";
+
+	} else if(SPhysicsEquationsSelector && UPhysicsEquationsSelector && TPhysicsEquationsSelector && APhysicsEquationsSelector){
+
+		WhatToShow = "s = ut + (at^2)/2";
+
+	} else if(VPhysicsEquationsSelector && UPhysicsEquationsSelector && TPhysicsEquationsSelector){
+
+		WhatToShow = "(v - u)/t";
+
+	}
+
+
+	document.getElementById('OutputPhysicsFormulaSelector').innerHTML = WhatToShow;
+
+}
+/***********************************************************************************************************************/
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function ChemPHCalc(){
+
+	var WhatToShow = "";
+
+	var ChemInput = parseInt(document.getElementById('ChemPHInput').value);
+	
+	if(ChemInput <= 3){
+
+		WhatToShow = "Strongly Acidic";
+
+	} else {
+
+		if (ChemInput <= 6){
+
+			WhatToShow = "Slightly Acidic";
+		} else {
+
+			if(ChemInput == 7){
+
+				WhatToShow = "Neutral";
+
+			} else {
+
+				if(ChemInput <= 10){
+
+					WhatToShow = "Slightly Basic";
+
+				} else {
+
+					if(ChemInput > 12){
+
+						WhatToShow = "Max PH Value Exceeded"
+
+					} else {
+
+						WhatToShow = "Strongly Basic"
+
+					}
+
+					
+
+				}
+
+			}
+
+		}
+
+	}
+
+	console.log(WhatToShow)
+
+
 }
