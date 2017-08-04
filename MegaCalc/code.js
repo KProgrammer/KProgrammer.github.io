@@ -195,7 +195,7 @@ function ChemPHCalc(){
 
 	}
 
-	console.log(WhatToShow)
+	document.getElementById('ChemPhOutput').innerHTML = WhatToShow;
 
 
 }
