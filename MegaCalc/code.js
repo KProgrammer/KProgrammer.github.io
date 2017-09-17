@@ -175,7 +175,7 @@ function ChemPHCalc(){
 
 				} else {
 
-					if(ChemInput > 12){
+					if(ChemInput > 14){
 
 						WhatToShow = "Max PH Value Exceeded"
 
@@ -196,6 +196,51 @@ function ChemPHCalc(){
 	}
 
 	document.getElementById('ChemPhOutput').innerHTML = WhatToShow;
+
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function SimpleInterest(){
+
+	Answer = document.getElementById('Answer')
+
+	P = document.getElementById('P').value
+	T = document.getElementById('T').value
+	R = document.getElementById('R').value
+	SI = document.getElementById('SI').value
+
+	if(P.toString() == ""){
+
+		P = (100 * SI) / (T * R)
+
+		Answer.innerHTML = ( "P = " + P.toString()) + " Rs."
+
+	} else if(R.toString() == ""){
+
+		R = (100 * SI) / (P * T)
+
+		Answer.innerHTML = "R = " + R.toString() + " % per annum"
+
+	} else if(T.toString() == ""){
+
+		T = (100 * SI) / (P * R)
+
+		Answer.innerHTML = "T = " + T.toString() + " Years"
+
+	} else if(SI.toString() == ""){
+
+		SI = (P * T * R) / 100
+
+		Answer.innerHTML = "SI = " + SI.toString() + " Rs."
+
+	}
+
+	Amount = parseInt(P) + parseInt(SI)
+
+	Answer.innerHTML += "			Amount = " + Amount
+
 
 
 }
