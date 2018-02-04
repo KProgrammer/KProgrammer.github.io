@@ -244,3 +244,16 @@ function SimpleInterest(){
 
 
 }
+////////////////////////////////Trig////////////////////////////////////////////
+function Trignometry(){
+
+	var AngleA = (document.getElementById("AngleA"));
+	var AngleC = document.getElementById("AngleC");
+	var Hyp = document.getElementById("Hypotenuse");
+	var AB = document.getElementById("AB");
+	var BC = document.getElementById("BC");
+	var inputNo = 0;
+	var Inputs = [AngleA, AngleC, Hyp, AB, BC];
+
+	
+}
