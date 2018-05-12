@@ -11,6 +11,40 @@
 
 }
 
+.PhysicsKinematicsBasicEqationsOfMotion{
+	background: coral;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	padding-right: 10px;
+	margin: auto;
+	text-align: center;
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	width: 800px;
+
+}
+
+.ChemPhValue {
+	background: greenyellow;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	padding-right: 10px;
+	margin: auto;
+	text-align: center;
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	width: 800px;
+}
+
+.SimpleInterestCalc {
+	background: rgb(138, 193, 255);
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	padding-right: 10px;
+	margin: auto;
+	text-align: center;
+	padding-top: 10px; 
+	padding-bottom: 10px;
+	width: 800px;
+}
+
 .Plus, .Minus, .Into, .By{
 	width: 30px;
 	height: 30px;

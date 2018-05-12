@@ -23,8 +23,10 @@ function Add(){
 	var FinalOutputNumerator2 = FractionNumerator2 * FractionDenominator1;
 	var FinalOutputNumerator = FinalOutputNumerator1 + FinalOutputNumerator2;
 
-	OutputFractionDenominator.innerHTML = FinalOutputDenominator;
-	OutputFractionNumerator.innerHTML = FinalOutputNumerator;
+	var Ans = Simplify(true, FinalOutputNumerator, FinalOutputDenominator)
+
+	OutputFractionDenominator.innerHTML = Ans[1];
+	OutputFractionNumerator.innerHTML = Ans[0];
 
 }
 
@@ -39,9 +41,11 @@ function Subtract(){
 	var FinalOutputNumerator1 = FractionNumerator1 * FractionDenominator2;
 	var FinalOutputNumerator2 = FractionNumerator2 * FractionDenominator1;
 	var FinalOutputNumerator = FinalOutputNumerator1 - FinalOutputNumerator2;
+	var Ans = Simplify(true, FinalOutputNumerator, FinalOutputDenominator)
 
-	OutputFractionDenominator.innerHTML = FinalOutputDenominator;
-	OutputFractionNumerator.innerHTML = FinalOutputNumerator;
+	OutputFractionDenominator.innerHTML = Ans[1];
+	OutputFractionNumerator.innerHTML = Ans[0];
+
 
 
 }
@@ -53,8 +57,10 @@ function Multiply(){
 	var FractionNumerator2 = parseInt(InputFractionNumerator2.value);
 	var FractionDenominator2 = parseInt(InputFractionDenominator2.value);
 
-	OutputFractionDenominator.innerHTML = FractionDenominator1 * FractionDenominator2;
-	OutputFractionNumerator.innerHTML = FractionNumerator1 * FractionNumerator2;
+	var Ans = Simplify(true, FractionNumerator1 * FractionNumerator2, FractionDenominator1 * FractionDenominator2)
+
+	OutputFractionDenominator.innerHTML = Ans[1];
+	OutputFractionNumerator.innerHTML = Ans[0];
 
 }
 
@@ -65,8 +71,10 @@ function Divide(){
 	var FractionNumerator2 = parseInt(InputFractionNumerator2.value);
 	var FractionDenominator2 = parseInt(InputFractionDenominator2.value);
 
-	OutputFractionDenominator.innerHTML = FractionDenominator1 * FractionNumerator2;
-	OutputFractionNumerator.innerHTML = FractionDenominator2 * FractionNumerator1;
+	var Ans = Simplify(true, FractionDenominator2 * FractionNumerator1, FractionDenominator1 * FractionNumerator2)
+
+	OutputFractionDenominator.innerHTML = Ans[1];
+	OutputFractionNumerator.innerHTML = Ans[0];
 
 }
 
@@ -76,39 +84,65 @@ function GCD(x, y) {
 
 }
 
-function Simplify(){
+function Simplify(calc, Num, Den){
 
-	var SimplifyNum = InputSimplifyNum.value;
-	var SimplifyDen = InputSimplifyDen.value;
+	if (!calc){
 
-	//x, y
-	var x = parseInt(SimplifyNum);
-	var y = parseInt(SimplifyDen);
+		var SimplifyNum = InputSimplifyNum.value;
+		var SimplifyDen = InputSimplifyDen.value;
 
-	var dividend = 0;
-	var divisor = 0;
-	
+		//x, y
+		var x = parseInt(SimplifyNum);
+		var y = parseInt(SimplifyDen);
 
-	if (x > y){
-
-		dividend = x;
-		divisor = y;
-
-	} else {
-
-		dividend = y;
-		divisor = x;
-
-	}
-
-	var HCF = GCD(dividend, divisor);
-	
-	OutputSimplifyNum.innerHTML = x / HCF;
-	OutputSimplifyDen.innerHTML = y / HCF; 
-
+		var dividend = 0;
+		var divisor = 0;
 		
-	
-	
+
+		if (x > y){
+
+			dividend = x;
+			divisor = y;
+
+		} else {
+
+			dividend = y;
+			divisor = x;
+
+		}
+
+		var HCF = GCD(dividend, divisor);
+		
+		OutputSimplifyNum.innerHTML = x / HCF;
+		OutputSimplifyDen.innerHTML = y / HCF; 
+
+			
+		
+	}else{
+		var x = parseInt(Num);
+		var y = parseInt(Den);
+
+		var dividend = 0;
+		var divisor = 0;
+		
+
+		if (x > y){
+
+			dividend = x;
+			divisor = y;
+
+		} else {
+
+			dividend = y;
+			divisor = x;
+
+		}
+
+		var HCF = GCD(dividend, divisor);
+
+		return [x/HCF, y/HCF]
+		
+	}	
 }
 ///////////////////////////////////////////////////////////////////////////////////////////
 /************************************************************************************************************ */
