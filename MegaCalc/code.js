@@ -1,29 +1,31 @@
+let el = (s) => {return document.getElementById(s);}
+
 ////////////////////////////////////////////////////////////////////////////////////////
 
-var InputFractionNumerator1 = document.getElementById('FractionNumerator1');
-var InputFractionDenominator1 = document.getElementById('FractionNumerator2');
-var InputFractionNumerator2 = document.getElementById('FractionDenominator1');
-var InputFractionDenominator2 = document.getElementById('FractionDenominator2');
-var OutputFractionNumerator = document.getElementById('OutputNumerator');
-var OutputFractionDenominator = document.getElementById('OutputDenominator');
-var InputSimplifyNum = document.getElementById('FractionSimplifierNum');
-var InputSimplifyDen = document.getElementById('FractionSimplifierDen');
-var OutputSimplifyDen = document.getElementById('FractionSimplifierOutputDen');
-var OutputSimplifyNum = document.getElementById('FractionSimplifierOutputNum');
+let InputFractionNumerator1 = el('FractionNumerator1');
+let InputFractionDenominator1 = el('FractionNumerator2');
+let InputFractionNumerator2 = el('FractionDenominator1');
+let InputFractionDenominator2 = el('FractionDenominator2');
+let OutputFractionNumerator = el('OutputNumerator');
+let OutputFractionDenominator = el('OutputDenominator');
+let InputSimplifyNum = el('FractionSimplifierNum');
+let InputSimplifyDen = el('FractionSimplifierDen');
+let OutputSimplifyDen = el('FractionSimplifierOutputDen');
+let OutputSimplifyNum = el('FractionSimplifierOutputNum');
 
 function Add(){
+	
+	let FractionNumerator1 = parseInt(InputFractionNumerator1.value);
+	let FractionDenominator1 = parseInt(InputFractionDenominator1.value);
+	let FractionNumerator2 = parseInt(InputFractionNumerator2.value);
+	let FractionDenominator2 = parseInt(InputFractionDenominator2.value);
 
-	var FractionNumerator1 = parseInt(InputFractionNumerator1.value);
-	var FractionDenominator1 = parseInt(InputFractionDenominator1.value);
-	var FractionNumerator2 = parseInt(InputFractionNumerator2.value);
-	var FractionDenominator2 = parseInt(InputFractionDenominator2.value);
+	let FinalOutputDenominator = FractionDenominator1 * FractionDenominator2;
+	let FinalOutputNumerator1 = FractionNumerator1 * FractionDenominator2;
+	let FinalOutputNumerator2 = FractionNumerator2 * FractionDenominator1;
+	let FinalOutputNumerator = FinalOutputNumerator1 + FinalOutputNumerator2;
 
-	var FinalOutputDenominator = FractionDenominator1 * FractionDenominator2;
-	var FinalOutputNumerator1 = FractionNumerator1 * FractionDenominator2;
-	var FinalOutputNumerator2 = FractionNumerator2 * FractionDenominator1;
-	var FinalOutputNumerator = FinalOutputNumerator1 + FinalOutputNumerator2;
-
-	var Ans = Simplify(true, FinalOutputNumerator, FinalOutputDenominator)
+	let Ans = Simplify(true, FinalOutputNumerator, FinalOutputDenominator)
 
 	OutputFractionDenominator.innerHTML = Ans[1];
 	OutputFractionNumerator.innerHTML = Ans[0];
@@ -32,16 +34,16 @@ function Add(){
 
 function Subtract(){
 
-	var FractionNumerator1 = parseInt(InputFractionNumerator1.value);
-	var FractionDenominator1 = parseInt(InputFractionDenominator1.value);
-	var FractionNumerator2 = parseInt(InputFractionNumerator2.value);
-	var FractionDenominator2 = parseInt(InputFractionDenominator2.value);
+	let FractionNumerator1 = parseInt(InputFractionNumerator1.value);
+	let FractionDenominator1 = parseInt(InputFractionDenominator1.value);
+	let FractionNumerator2 = parseInt(InputFractionNumerator2.value);
+	let FractionDenominator2 = parseInt(InputFractionDenominator2.value);
 
-	var FinalOutputDenominator = FractionDenominator1 * FractionDenominator2;
-	var FinalOutputNumerator1 = FractionNumerator1 * FractionDenominator2;
-	var FinalOutputNumerator2 = FractionNumerator2 * FractionDenominator1;
-	var FinalOutputNumerator = FinalOutputNumerator1 - FinalOutputNumerator2;
-	var Ans = Simplify(true, FinalOutputNumerator, FinalOutputDenominator)
+	let FinalOutputDenominator = FractionDenominator1 * FractionDenominator2;
+	let FinalOutputNumerator1 = FractionNumerator1 * FractionDenominator2;
+	let FinalOutputNumerator2 = FractionNumerator2 * FractionDenominator1;
+	let FinalOutputNumerator = FinalOutputNumerator1 - FinalOutputNumerator2;
+	let Ans = Simplify(true, FinalOutputNumerator, FinalOutputDenominator)
 
 	OutputFractionDenominator.innerHTML = Ans[1];
 	OutputFractionNumerator.innerHTML = Ans[0];
@@ -52,12 +54,12 @@ function Subtract(){
 
 function Multiply(){
 
-	var FractionNumerator1 = parseInt(InputFractionNumerator1.value);
-	var FractionDenominator1 = parseInt(InputFractionDenominator1.value);
-	var FractionNumerator2 = parseInt(InputFractionNumerator2.value);
-	var FractionDenominator2 = parseInt(InputFractionDenominator2.value);
+	let FractionNumerator1 = parseInt(InputFractionNumerator1.value);
+	let FractionDenominator1 = parseInt(InputFractionDenominator1.value);
+	let FractionNumerator2 = parseInt(InputFractionNumerator2.value);
+	let FractionDenominator2 = parseInt(InputFractionDenominator2.value);
 
-	var Ans = Simplify(true, FractionNumerator1 * FractionNumerator2, FractionDenominator1 * FractionDenominator2)
+	let Ans = Simplify(true, FractionNumerator1 * FractionNumerator2, FractionDenominator1 * FractionDenominator2)
 
 	OutputFractionDenominator.innerHTML = Ans[1];
 	OutputFractionNumerator.innerHTML = Ans[0];
@@ -66,37 +68,33 @@ function Multiply(){
 
 function Divide(){
 
-	var FractionNumerator1 = parseInt(InputFractionNumerator1.value);
-	var FractionDenominator1 = parseInt(InputFractionDenominator1.value);
-	var FractionNumerator2 = parseInt(InputFractionNumerator2.value);
-	var FractionDenominator2 = parseInt(InputFractionDenominator2.value);
+	let FractionNumerator1 = parseInt(InputFractionNumerator1.value);
+	let FractionDenominator1 = parseInt(InputFractionDenominator1.value);
+	let FractionNumerator2 = parseInt(InputFractionNumerator2.value);
+	let FractionDenominator2 = parseInt(InputFractionDenominator2.value);
 
-	var Ans = Simplify(true, FractionDenominator2 * FractionNumerator1, FractionDenominator1 * FractionNumerator2)
+	let Ans = Simplify(true, FractionDenominator2 * FractionNumerator1, FractionDenominator1 * FractionNumerator2)
 
 	OutputFractionDenominator.innerHTML = Ans[1];
 	OutputFractionNumerator.innerHTML = Ans[0];
 
 }
 
-function GCD(x, y) {
-
-	return x == 0 ? y : GCD(y % x, x);
-
-}
+let GCD = (x, y) => { return x == 0 ? y : GCD(y % x, x); }
 
 function Simplify(calc, Num, Den){
 
 	if (!calc){
 
-		var SimplifyNum = InputSimplifyNum.value;
-		var SimplifyDen = InputSimplifyDen.value;
+		let SimplifyNum = InputSimplifyNum.value;
+		let SimplifyDen = InputSimplifyDen.value;
 
 		//x, y
-		var x = parseInt(SimplifyNum);
-		var y = parseInt(SimplifyDen);
+		let x = parseInt(SimplifyNum);
+		let y = parseInt(SimplifyDen);
 
-		var dividend = 0;
-		var divisor = 0;
+		let dividend = 0;
+		let divisor = 0;
 		
 
 		if (x > y){
@@ -111,7 +109,7 @@ function Simplify(calc, Num, Den){
 
 		}
 
-		var HCF = GCD(dividend, divisor);
+		let HCF = GCD(dividend, divisor);
 		
 		OutputSimplifyNum.innerHTML = x / HCF;
 		OutputSimplifyDen.innerHTML = y / HCF; 
@@ -119,11 +117,11 @@ function Simplify(calc, Num, Den){
 			
 		
 	}else{
-		var x = parseInt(Num);
-		var y = parseInt(Den);
+		let x = parseInt(Num);
+		let y = parseInt(Den);
 
-		var dividend = 0;
-		var divisor = 0;
+		let dividend = 0;
+		let divisor = 0;
 		
 
 		if (x > y){
@@ -138,7 +136,7 @@ function Simplify(calc, Num, Den){
 
 		}
 
-		var HCF = GCD(dividend, divisor);
+		let HCF = GCD(dividend, divisor);
 
 		return [x/HCF, y/HCF]
 		
@@ -148,13 +146,13 @@ function Simplify(calc, Num, Den){
 /************************************************************************************************************ */
 function ChooseTheEquationOfMotion(){
 
-	var WhatToShow = "";
+	let WhatToShow = "";
 
-	var VPhysicsEquationsSelector = document.getElementById('v').checked;
-	var UPhysicsEquationsSelector = document.getElementById('u').checked;
-	var APhysicsEquationsSelector = document.getElementById('a').checked;
-	var TPhysicsEquationsSelector = document.getElementById('t').checked;
-	var SPhysicsEquationsSelector = document.getElementById('s').checked;
+	let VPhysicsEquationsSelector = el('v').checked;
+	let UPhysicsEquationsSelector = el('u').checked;
+	let APhysicsEquationsSelector = el('a').checked;
+	let TPhysicsEquationsSelector = el('t').checked;
+	let SPhysicsEquationsSelector = el('s').checked;
 
 	if (VPhysicsEquationsSelector && UPhysicsEquationsSelector && APhysicsEquationsSelector && TPhysicsEquationsSelector){
 
@@ -175,16 +173,16 @@ function ChooseTheEquationOfMotion(){
 	}
 
 
-	document.getElementById('OutputPhysicsFormulaSelector').innerHTML = WhatToShow;
+	el('OutputPhysicsFormulaSelector').innerHTML = WhatToShow;
 
 }
 /***********************************************************************************************************************/
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function ChemPHCalc(){
 
-	var WhatToShow = "";
+	let WhatToShow = "";
 
-	var ChemInput = parseInt(document.getElementById('ChemPHInput').value);
+	let ChemInput = parseInt(el('ChemPHInput').value);
 	
 	if(ChemInput <= 3){
 
@@ -229,7 +227,7 @@ function ChemPHCalc(){
 
 	}
 
-	document.getElementById('ChemPhOutput').innerHTML = WhatToShow;
+	el('ChemPhOutput').innerHTML = WhatToShow;
 
 
 }
@@ -238,12 +236,12 @@ function ChemPHCalc(){
 
 function SimpleInterest(){
 
-	Answer = document.getElementById('Answer')
+	Answer = el('Answer')
 
-	P = document.getElementById('P').value
-	T = document.getElementById('T').value
-	R = document.getElementById('R').value
-	SI = document.getElementById('SI').value
+	P = el('P').value
+	T = el('T').value
+	R = el('R').value
+	SI = el('SI').value
 
 	if(P.toString() == ""){
 
@@ -279,15 +277,3 @@ function SimpleInterest(){
 
 }
 ////////////////////////////////Trig////////////////////////////////////////////
-function Trignometry(){
-
-	var AngleA = (document.getElementById("AngleA"));
-	var AngleC = document.getElementById("AngleC");
-	var Hyp = document.getElementById("Hypotenuse");
-	var AB = document.getElementById("AB");
-	var BC = document.getElementById("BC");
-	var inputNo = 0;
-	var Inputs = [AngleA, AngleC, Hyp, AB, BC];
-
-	
-}
