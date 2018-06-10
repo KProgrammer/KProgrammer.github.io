@@ -1,6 +1,6 @@
 #FractionCalculator{
 
-	background-color: lightblue;
+	background-color: rgb(255, 100, 60);
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	padding-right: 10px;
 	margin: auto;
@@ -12,7 +12,7 @@
 }
 
 .PhysicsKinematicsBasicEqationsOfMotion{
-	background: coral;
+	background: rgb(255, 125, 70);
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	padding-right: 10px;
 	margin: auto;
@@ -24,7 +24,7 @@
 }
 
 .ChemPhValue {
-	background: greenyellow;
+	background: rgb(255, 150, 80);
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	padding-right: 10px;
 	margin: auto;
@@ -35,7 +35,7 @@
 }
 
 .SimpleInterestCalc {
-	background: rgb(138, 193, 255);
+	background: rgb(255, 175, 90);
 	font-family: Georgia, 'Times New Roman', Times, serif;
 	padding-right: 10px;
 	margin: auto;
@@ -48,14 +48,9 @@
 .Plus, .Minus, .Into, .By{
 	width: 30px;
 	height: 30px;
+
 	font-size: 20px;
 } 
-
-.Simplify {
-	width: 80px;
-	height: 30px;
-	font-size: 17.5px;
-}
 
 #FractionCalculator p{
 	font-size: 20px;
@@ -95,5 +90,22 @@
 	width: 5%;
 	margin-left: 2%;
 	
+}
+
+
+
+button{
+	width: 100px;
+	height: 40px;
+	font-size: 15px;
+	border-radius: 12px;
+	transition-duration: 0.4s;
+	background: whitesmoke;
+	border: 2px solid lightblue;
+}
+
+button:hover {
+	background: rgb(138, 172, 211);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
