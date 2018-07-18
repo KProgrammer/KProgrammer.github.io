@@ -1,7 +1,7 @@
 APP_ID = 'IXXOhniqhl6FHSQi4d0IZq5sX4iN2FxglShPuSlS';
 JS_KEY = '5nKA0gak0mwsYChJaR1InZSJ8vQrg0tOCBtIsJ7c';
 
-Parse.initialize(this.APP_ID, this.JS_KEY);
+Parse.initialize(this.APP_ID);
 Parse.serverURL = "https://parseapi.back4app.com/";
 let Math = [];
 let Physics = [];
