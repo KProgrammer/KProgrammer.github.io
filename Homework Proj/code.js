@@ -26,7 +26,8 @@ query.find({
         
     },
     error: function(error){            
-        console.error(error.message);       
+        console.error(error.message); 
+        console.error(error.code);
         return [];             
     }
 });
