@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Homework Organizer</title>
+    <script src="https://unpkg.com/parse/dist/parse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="subs">
+        <div v-if="logInn">
+            <h2>Add Homework</h2>
+            <hr>
+            <h3>Subject</h3>
+            <select id="subjects">
+                <option>Maths</option>
+                <option>Physics</option>
+                <option>Chemistry</option>
+                <option>MAT</option>
+                <option>Eng</option>
+                <option>Bio</option>
+                <option>SST</option>
+                <option>Hindi</option>
+                <option>Telugu</option>
+            </select>
+            <h3>Homework</h3><p>(If there is a submission date, you can put it like this: Ch1 - 1.2.2018)</p>
+            <input id='homeW'>
+            <br>
+            <button v-on:click="saveHomeWorkData()">Add Homework</button>
+            <hr>
+        </div>
+
+
+        <h2 v-if="logInn">Maths</h2>
+        <ul v-if="logInn">
+            <li v-for="item in Maths">
+                {{ item }}
+            </li>
+        </ul>
+        <h2 v-if="logInn">Physics</h2>
+        <ul v-if="logInn">
+            <li v-for="item in Physics">
+                {{ item }}
+            </li>
+        </ul>
+        <h2 v-if="logInn">Chem</h2>
+        <ul v-if="logInn">
+            <li v-for="item in Chem">
+                {{ item }}
+            </li>
+        </ul>
+        <h2 v-if="logInn">MAT</h2>
+        <ul v-if="logInn">
+            <li v-for="item in MAT">
+                {{ item }}
+            </li>
+        </ul>
+        <h2 v-if="logInn">Eng</h2>
+        <ul v-if="logInn">
+            <li v-for="item in Eng">
+                {{ item }}
+            </li>
+        </ul>
+        <h2 v-if="logInn">Bio</h2>
+        <ul v-if="logInn">
+            <li v-for="item in Bio">
+                {{ item }}
+            </li>
+        </ul>
+        <h2 v-if="logInn">SST</h2>
+        <ul v-if="logInn">
+            <li v-for="item in SST">
+                {{ item }}
+            </li>
+        </ul>
+        <h2 v-if="logInn">Hindi</h2>
+        <ul v-if="logInn">
+            <li v-for="item in Hindi">
+                {{ item }}
+            </li>
+        </ul>
+        <h2 v-if="logInn">Telugu</h2>
+        <ul v-if="logInn">
+            <li v-for="item in Telugu">
+                {{ item }}
+            </li>
+        </ul>
+        <div v-if="!logInn">
+            <h3>Username: </h3>
+            <input id="Username" type="text">
+            <h3>Password: </h3>
+            <input id="Password" type="password">
+            <br>
+            <br>
+            <button v-on:click="Login()">Login</button>
+            <button v-on:click="SignUp()">Sign Up</button>
+            <p id="errr"></p>
+        </div>
+    </div>
+    <script src="code.js" charset="utf-8"></script>
+</body>
+
+</html>
