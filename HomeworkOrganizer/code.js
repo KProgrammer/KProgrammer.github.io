@@ -111,6 +111,26 @@ let vm = new Vue({
                 username: usern
             }, (result)=>{
                 console.log("Mission Successful");
+                if (subject == "Maths") {
+                    console.log("Maths");
+                    this.Maths.push(homework);
+                } else if (subject == "Physics"){
+                    this.Physics.push(homework);
+                } else if (subject == "Chem"){
+                    this.Chem.push(homework);
+                } else if (subject == "MAT"){
+                    this.MAT.push(homework);
+                } else if (subject == "Eng"){
+                    this.Eng.push(homework);
+                } else if (subject == "Bio"){
+                    this.Bio.push(homework);
+                } else if (subject == "SST"){
+                    this.SST.push(homework);
+                } else if (subject == "Hindi"){
+                    this.Hindi.push(homework);
+                } else if (subject == "Telugu"){
+                    this.Telugu.push(homework);
+                }
             }, (error)=>{
                 console.log("Erragada Error");
                 console.warn(error.code);
