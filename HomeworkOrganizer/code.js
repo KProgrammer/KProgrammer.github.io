@@ -60,6 +60,9 @@ let vm = new Vue({
             })
         },
         signUp: async function(username, password) {
+            if(Parse.User.current()){
+                Parse.User.logOut();
+            }
             let user = new Parse.User();
             user.set("username", username);
             user.set("password", password);
@@ -77,6 +80,7 @@ let vm = new Vue({
             return await Parse.User.logIn(username, password);
         },
         Login: function() {
+            
             let username = document.getElementById('Username').value;
             let password = document.getElementById('Password').value;
             this.login(username, password)
