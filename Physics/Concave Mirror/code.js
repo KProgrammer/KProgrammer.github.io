@@ -50,7 +50,11 @@ function draw(){
     strokeWeight(1);
     v = 1/((1/f)-(1/u));
     hi = (-ho * v / u)
+    stroke(125, 0, 0)
+    strokeWeight(2);
     line(mir_pos + v, height/2, mir_pos + v, (height/2)-hi)
+    stroke(0);
+    strokeWeight(1);
     if(au){
         if(u == 500){
             front = false;
