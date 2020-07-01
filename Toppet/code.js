@@ -44,6 +44,16 @@ async function getInitialData() {
     let query = new Parse.Query(Answers);
     let subscription = client.subscribe(query);
 
+    subscription.on('delete', obj => {
+        console.log(obj)
+        for (let i = 0; i < vm.answer_key.length; i++) {
+            if (vm.answer_key[i].question == obj.get('question') && vm.answer_key[i].answer == obj.get('answer')) {
+                vm.answer_key.splice(i, 1);
+            }
+        }
+    });
+
+
     subscription.on('create', obj => {
         console.log('Object Created')
         vm.answer_key.push({
@@ -52,6 +62,8 @@ async function getInitialData() {
         })
         console.log(vm.answer_key)
     });
+
+
     document.getElementById('status').innerHTML += ", listener set up"
 }
 
@@ -87,11 +99,12 @@ function main() {
                     if (results2.length != 0) {
                         results2[0].destroy().then(obj => {
                             console.log("successfully destroyed")
-                            for (let i = 0; i < this.answer_key.length; i++) {
+                            /* for (let i = 0; i < this.answer_key.length; i++) {
                                 if (this.answer_key[i].question == this.current_question) {
+                                    console.log("REMOVING")
                                     this.answer_key.splice(i, 1)
                                 }
-                            }
+                            } */
                             answers.save({
                                 question: this.current_question,
                                 answer: this.current_answer
